@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="RLTSquare_Unit3::menu" title="RLTSquare" module="RLTSquare_Unit3" sortOrder="10"
+             resource="RLTSquare_Unit3::menu"/>
+
+        <add id="RLTSquare_Unit3::extensions" title="Extension" module="RLTSquare_Unit3" sortOrder="120"
+             parent="RLTSquare_Unit3::menu" resource="RLTSquare_Unit3::extensions"/>
+
+        <add id="RLTSquare_Unit3::extension" title="Unit 3" module="RLTSquare_Unit3" sortOrder="10"
+             parent="RLTSquare_Unit3::extensions" resource="RLTSquare_Unit3::extension"/>
+
+        <add id="RLTSquare_Unit3::extension_menu" title="Unit 3" module="RLTSquare_Unit3" sortOrder="130"
+             parent="RLTSquare_Unit3::menu" resource="RLTSquare_Unit3::extension_menu"/>
+
+        <add id="RLTSquare_Unit3::extension_configuration" title="Configuration" module="RLTSquare_Unit3" sortOrder="10"
+             parent="RLTSquare_Unit3::extension_menu" action="adminhtml/system_config/edit/section/settings"
+             resource="RLTSquare_Unit3::extension_configuration"/>
+    </menu>
+</config>
