@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="rltsquare" translate="label" sortOrder="10">
+            <label>RLTSquare</label>
+        </tab>
+        <section id="unit3" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Unit 3</label>
+            <tab>rltsquare</tab>
+            <resource>RLTSquare_Unit3::unit3_configurations</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="1">
+                <label>Settings</label>
+                <field id="username" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="1">
+                    <label>UserName</label>
+                    <comment>Username that will appear on customer dashboard</comment>
+                </field>
+                <field id='password' translate='label' type='password' sortOrder='3' showInDefault='1' showInWebsite='1'
+                       showInStore='1'>
+                    <label>Password</label>
+                    <comment>Password that will appear on customer dashboard</comment>
+                </field>
+                <field id="environment" translate="label comment" sortOrder="6" type="select" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Environment Type</label>
+                    <!-- source model which we created for drop down options -->
+                    <source_model>RLTSquare\Unit3\Model\Config\Source\Environment</source_model>
+                    <comment model="RLTSquare\Unit3\Block\Adminhtml\ConfigurationComment" />
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

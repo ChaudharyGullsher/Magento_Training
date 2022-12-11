@@ -1,0 +1,20 @@
+<?php
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \RLTSquare\Unit3\Helper\Data\ConfigProvider $block */
+    $helper = $this->helper('RLTSquare\Unit3\Helper\Data\ConfigProvider');
+?>
+
+<strong><?= $escaper->escapeHtml(__('Username:')) ?></strong>
+<?php echo $helper->getUsername(); ?><br>
+<strong><?= $escaper->escapeHtml(__('Password:'))?></strong>
+<?php
+    $environment_type = $helper->getEnvironment();
+    $password = $helper->getPassword();
+    if ($environment_type == 'Staging' || $environment_type == 'Development') {
+        $passCode = substr($password, 0, 3);
+        echo $passCode;
+    }
+?>
+<br>
+<strong><?= $escaper->escapeHtml(__('Environment type:'))?></strong>
+<?php echo $environment_type ?>
